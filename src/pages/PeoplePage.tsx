@@ -43,8 +43,8 @@ export const PeoplePage = () => {
 
       const matchesQuery =
         person.name.toLowerCase().includes(query.toLowerCase()) ||
-        person.fatherName?.toLowerCase().includes(query.toLowerCase()) ||
-        person.motherName?.toLowerCase().includes(query.toLowerCase());
+        (person.fatherName || '').toLowerCase().includes(query.toLowerCase()) ||
+        (person.motherName || '').toLowerCase().includes(query.toLowerCase());
 
       const matchesSex =
         sexFilter === Sex.All ||
